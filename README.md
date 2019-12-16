@@ -27,7 +27,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
     }
   ],
   "require": {
-    "vouchery/php-client": "*@master"
+    "vouchery/php-client": "master"
   }
 }
 ```
