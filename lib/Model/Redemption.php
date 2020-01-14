@@ -61,12 +61,14 @@ class Redemption implements ModelInterface, ArrayAccess
         'transaction_id' => 'string',
         'customer_identifier' => 'string',
         'total_transaction_cost' => 'float',
+        'ttl' => 'float',
         'granted_discount' => 'float',
         'user_agent' => 'string',
         'voucher' => '\Vouchery\Model\RedemptionVoucher',
         'confirmed' => 'bool',
         'product_items' => '\Vouchery\Model\RedemptionProductItems[]',
         'validated_at' => '\DateTime',
+        'expires_at' => '\DateTime',
         'confirmed_at' => '\DateTime',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime'
@@ -82,12 +84,14 @@ class Redemption implements ModelInterface, ArrayAccess
         'transaction_id' => null,
         'customer_identifier' => null,
         'total_transaction_cost' => null,
+        'ttl' => null,
         'granted_discount' => null,
         'user_agent' => null,
         'voucher' => null,
         'confirmed' => null,
         'product_items' => null,
         'validated_at' => 'date-time',
+        'expires_at' => 'date-time',
         'confirmed_at' => 'date-time',
         'created_at' => 'date-time',
         'updated_at' => 'date-time'
@@ -124,12 +128,14 @@ class Redemption implements ModelInterface, ArrayAccess
         'transaction_id' => 'transaction_id',
         'customer_identifier' => 'customer_identifier',
         'total_transaction_cost' => 'total_transaction_cost',
+        'ttl' => 'ttl',
         'granted_discount' => 'granted_discount',
         'user_agent' => 'user_agent',
         'voucher' => 'voucher',
         'confirmed' => 'confirmed',
         'product_items' => 'product_items',
         'validated_at' => 'validated_at',
+        'expires_at' => 'expires_at',
         'confirmed_at' => 'confirmed_at',
         'created_at' => 'created_at',
         'updated_at' => 'updated_at'
@@ -145,12 +151,14 @@ class Redemption implements ModelInterface, ArrayAccess
         'transaction_id' => 'setTransactionId',
         'customer_identifier' => 'setCustomerIdentifier',
         'total_transaction_cost' => 'setTotalTransactionCost',
+        'ttl' => 'setTtl',
         'granted_discount' => 'setGrantedDiscount',
         'user_agent' => 'setUserAgent',
         'voucher' => 'setVoucher',
         'confirmed' => 'setConfirmed',
         'product_items' => 'setProductItems',
         'validated_at' => 'setValidatedAt',
+        'expires_at' => 'setExpiresAt',
         'confirmed_at' => 'setConfirmedAt',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt'
@@ -166,12 +174,14 @@ class Redemption implements ModelInterface, ArrayAccess
         'transaction_id' => 'getTransactionId',
         'customer_identifier' => 'getCustomerIdentifier',
         'total_transaction_cost' => 'getTotalTransactionCost',
+        'ttl' => 'getTtl',
         'granted_discount' => 'getGrantedDiscount',
         'user_agent' => 'getUserAgent',
         'voucher' => 'getVoucher',
         'confirmed' => 'getConfirmed',
         'product_items' => 'getProductItems',
         'validated_at' => 'getValidatedAt',
+        'expires_at' => 'getExpiresAt',
         'confirmed_at' => 'getConfirmedAt',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt'
@@ -254,12 +264,14 @@ class Redemption implements ModelInterface, ArrayAccess
         $this->container['transaction_id'] = isset($data['transaction_id']) ? $data['transaction_id'] : null;
         $this->container['customer_identifier'] = isset($data['customer_identifier']) ? $data['customer_identifier'] : null;
         $this->container['total_transaction_cost'] = isset($data['total_transaction_cost']) ? $data['total_transaction_cost'] : null;
+        $this->container['ttl'] = isset($data['ttl']) ? $data['ttl'] : null;
         $this->container['granted_discount'] = isset($data['granted_discount']) ? $data['granted_discount'] : null;
         $this->container['user_agent'] = isset($data['user_agent']) ? $data['user_agent'] : null;
         $this->container['voucher'] = isset($data['voucher']) ? $data['voucher'] : null;
         $this->container['confirmed'] = isset($data['confirmed']) ? $data['confirmed'] : null;
         $this->container['product_items'] = isset($data['product_items']) ? $data['product_items'] : null;
         $this->container['validated_at'] = isset($data['validated_at']) ? $data['validated_at'] : null;
+        $this->container['expires_at'] = isset($data['expires_at']) ? $data['expires_at'] : null;
         $this->container['confirmed_at'] = isset($data['confirmed_at']) ? $data['confirmed_at'] : null;
         $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
         $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
@@ -409,6 +421,30 @@ class Redemption implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets ttl
+     *
+     * @return float|null
+     */
+    public function getTtl()
+    {
+        return $this->container['ttl'];
+    }
+
+    /**
+     * Sets ttl
+     *
+     * @param float|null $ttl How many minutes should the redemption be valid for before it expires.
+     *
+     * @return $this
+     */
+    public function setTtl($ttl)
+    {
+        $this->container['ttl'] = $ttl;
+
+        return $this;
+    }
+
+    /**
      * Gets granted_discount
      *
      * @return float|null
@@ -548,6 +584,30 @@ class Redemption implements ModelInterface, ArrayAccess
     public function setValidatedAt($validated_at)
     {
         $this->container['validated_at'] = $validated_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets expires_at
+     *
+     * @return \DateTime|null
+     */
+    public function getExpiresAt()
+    {
+        return $this->container['expires_at'];
+    }
+
+    /**
+     * Sets expires_at
+     *
+     * @param \DateTime|null $expires_at expires_at
+     *
+     * @return $this
+     */
+    public function setExpiresAt($expires_at)
+    {
+        $this->container['expires_at'] = $expires_at;
 
         return $this;
     }

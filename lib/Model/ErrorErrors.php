@@ -190,6 +190,7 @@ class ErrorErrors implements ModelInterface, ArrayAccess
     const CODE_INVALID_DATETIME = 'invalid_datetime';
     const CODE_NOT_ALLOWED_TO_HAVE_VOUCHERS = 'not_allowed_to_have_vouchers';
     const CODE_ALREADY_CONFIRMED = 'already_confirmed';
+    const CODE_EXPIRED = 'expired';
     const CODE_MISSING_REQUIRED_TAGS = 'missing_required_tags';
     const CODE_INCLUDES_FORBIDDEN_TAGS = 'includes_forbidden_tags';
     const CODE_MISSING_REQUIRED_CATEGORY = 'missing_required_category';
@@ -236,6 +237,7 @@ class ErrorErrors implements ModelInterface, ArrayAccess
             self::CODE_INVALID_DATETIME,
             self::CODE_NOT_ALLOWED_TO_HAVE_VOUCHERS,
             self::CODE_ALREADY_CONFIRMED,
+            self::CODE_EXPIRED,
             self::CODE_MISSING_REQUIRED_TAGS,
             self::CODE_INCLUDES_FORBIDDEN_TAGS,
             self::CODE_MISSING_REQUIRED_CATEGORY,

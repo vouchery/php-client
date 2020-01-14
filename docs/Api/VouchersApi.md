@@ -270,7 +270,7 @@ void (empty response body)
 
 ## findVoucher
 
-> \Vouchery\Model\Voucher findVoucher($medium, $purpose, $team, $channel, $budget_code, $customer_identifier)
+> \Vouchery\Model\Voucher findVoucher($medium, $purpose, $team, $channel, $customer_identifier)
 
 Find a voucher by campaign metadata
 
@@ -299,11 +299,10 @@ $medium = array('medium_example'); // string[] |
 $purpose = array('purpose_example'); // string[] | 
 $team = array('team_example'); // string[] | 
 $channel = array('channel_example'); // string[] | 
-$budget_code = array('budget_code_example'); // string[] | 
 $customer_identifier = 'customer_identifier_example'; // string | \"Assign found voucher to a customer with this identifier. Will create customer if not present. Optional.\"
 
 try {
-    $result = $apiInstance->findVoucher($medium, $purpose, $team, $channel, $budget_code, $customer_identifier);
+    $result = $apiInstance->findVoucher($medium, $purpose, $team, $channel, $customer_identifier);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VouchersApi->findVoucher: ', $e->getMessage(), PHP_EOL;
@@ -320,7 +319,6 @@ Name | Type | Description  | Notes
  **purpose** | [**string[]**](../Model/string.md)|  | [optional]
  **team** | [**string[]**](../Model/string.md)|  | [optional]
  **channel** | [**string[]**](../Model/string.md)|  | [optional]
- **budget_code** | [**string[]**](../Model/string.md)|  | [optional]
  **customer_identifier** | **string**| \&quot;Assign found voucher to a customer with this identifier. Will create customer if not present. Optional.\&quot; | [optional]
 
 ### Return type

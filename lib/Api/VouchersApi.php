@@ -1137,16 +1137,15 @@ class VouchersApi
      * @param  string[] $purpose purpose (optional)
      * @param  string[] $team team (optional)
      * @param  string[] $channel channel (optional)
-     * @param  string[] $budget_code budget_code (optional)
      * @param  string $customer_identifier \&quot;Assign found voucher to a customer with this identifier. Will create customer if not present. Optional.\&quot; (optional)
      *
      * @throws \Vouchery\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Vouchery\Model\Voucher
      */
-    public function findVoucher($medium = null, $purpose = null, $team = null, $channel = null, $budget_code = null, $customer_identifier = null)
+    public function findVoucher($medium = null, $purpose = null, $team = null, $channel = null, $customer_identifier = null)
     {
-        list($response) = $this->findVoucherWithHttpInfo($medium, $purpose, $team, $channel, $budget_code, $customer_identifier);
+        list($response) = $this->findVoucherWithHttpInfo($medium, $purpose, $team, $channel, $customer_identifier);
         return $response;
     }
 
@@ -1159,16 +1158,15 @@ class VouchersApi
      * @param  string[] $purpose (optional)
      * @param  string[] $team (optional)
      * @param  string[] $channel (optional)
-     * @param  string[] $budget_code (optional)
      * @param  string $customer_identifier \&quot;Assign found voucher to a customer with this identifier. Will create customer if not present. Optional.\&quot; (optional)
      *
      * @throws \Vouchery\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Vouchery\Model\Voucher, HTTP status code, HTTP response headers (array of strings)
      */
-    public function findVoucherWithHttpInfo($medium = null, $purpose = null, $team = null, $channel = null, $budget_code = null, $customer_identifier = null)
+    public function findVoucherWithHttpInfo($medium = null, $purpose = null, $team = null, $channel = null, $customer_identifier = null)
     {
-        $request = $this->findVoucherRequest($medium, $purpose, $team, $channel, $budget_code, $customer_identifier);
+        $request = $this->findVoucherRequest($medium, $purpose, $team, $channel, $customer_identifier);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1252,15 +1250,14 @@ class VouchersApi
      * @param  string[] $purpose (optional)
      * @param  string[] $team (optional)
      * @param  string[] $channel (optional)
-     * @param  string[] $budget_code (optional)
      * @param  string $customer_identifier \&quot;Assign found voucher to a customer with this identifier. Will create customer if not present. Optional.\&quot; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function findVoucherAsync($medium = null, $purpose = null, $team = null, $channel = null, $budget_code = null, $customer_identifier = null)
+    public function findVoucherAsync($medium = null, $purpose = null, $team = null, $channel = null, $customer_identifier = null)
     {
-        return $this->findVoucherAsyncWithHttpInfo($medium, $purpose, $team, $channel, $budget_code, $customer_identifier)
+        return $this->findVoucherAsyncWithHttpInfo($medium, $purpose, $team, $channel, $customer_identifier)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1277,16 +1274,15 @@ class VouchersApi
      * @param  string[] $purpose (optional)
      * @param  string[] $team (optional)
      * @param  string[] $channel (optional)
-     * @param  string[] $budget_code (optional)
      * @param  string $customer_identifier \&quot;Assign found voucher to a customer with this identifier. Will create customer if not present. Optional.\&quot; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function findVoucherAsyncWithHttpInfo($medium = null, $purpose = null, $team = null, $channel = null, $budget_code = null, $customer_identifier = null)
+    public function findVoucherAsyncWithHttpInfo($medium = null, $purpose = null, $team = null, $channel = null, $customer_identifier = null)
     {
         $returnType = '\Vouchery\Model\Voucher';
-        $request = $this->findVoucherRequest($medium, $purpose, $team, $channel, $budget_code, $customer_identifier);
+        $request = $this->findVoucherRequest($medium, $purpose, $team, $channel, $customer_identifier);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1329,13 +1325,12 @@ class VouchersApi
      * @param  string[] $purpose (optional)
      * @param  string[] $team (optional)
      * @param  string[] $channel (optional)
-     * @param  string[] $budget_code (optional)
      * @param  string $customer_identifier \&quot;Assign found voucher to a customer with this identifier. Will create customer if not present. Optional.\&quot; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function findVoucherRequest($medium = null, $purpose = null, $team = null, $channel = null, $budget_code = null, $customer_identifier = null)
+    protected function findVoucherRequest($medium = null, $purpose = null, $team = null, $channel = null, $customer_identifier = null)
     {
 
         $resourcePath = '/vouchers/find';
@@ -1372,13 +1367,6 @@ class VouchersApi
         }
         if ($channel !== null) {
             $queryParams['channel'] = ObjectSerializer::toQueryValue($channel);
-        }
-        // query params
-        if (is_array($budget_code)) {
-            $budget_code = ObjectSerializer::serializeCollection($budget_code, 'multi', true);
-        }
-        if ($budget_code !== null) {
-            $queryParams['budget_code'] = ObjectSerializer::toQueryValue($budget_code);
         }
         // query params
         if ($customer_identifier !== null) {
