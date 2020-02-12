@@ -288,8 +288,8 @@ class Campaign implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
-    const TYPE_MAIN = 'main';
-    const TYPE_SUB = 'sub';
+    const TYPE_MAIN_CAMPAIGN = 'MainCampaign';
+    const TYPE_SUB_CAMPAIGN = 'SubCampaign';
     const STATUS_DRAFT = 'draft';
     const STATUS_ACTIVE = 'active';
     const STATUS_INACTIVE = 'inactive';
@@ -319,8 +319,8 @@ class Campaign implements ModelInterface, ArrayAccess
     public function getTypeAllowableValues()
     {
         return [
-            self::TYPE_MAIN,
-            self::TYPE_SUB,
+            self::TYPE_MAIN_CAMPAIGN,
+            self::TYPE_SUB_CAMPAIGN,
         ];
     }
     
@@ -544,7 +544,7 @@ class Campaign implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param string $type This field is required only when you create a campaign. Main Campaign is a wrapper for multipe Sub Campaings, gouped together. Main Campaign can have own budget and redemptions limit.
+     * @param string $type This field is required only when you create a campaign. Main Campaign is a wrapper for multipe Sub Campaings, grouped together. Main Campaign can have own budget and redemptions limit.
      *
      * @return $this
      */

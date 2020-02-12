@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** | This field is required only when you create a campaign. Main Campaign is a wrapper for multipe Sub Campaings, gouped together. Main Campaign can have own budget and redemptions limit. | 
+**type** | **string** | This field is required only when you create a campaign. Main Campaign is a wrapper for multipe Sub Campaings, grouped together. Main Campaign can have own budget and redemptions limit. | 
 **id** | **int** |  | [optional] [readonly] 
 **parent_id** | **int** | Required only for subcampaigns. | 
 **status** | **string** |  | [optional] 

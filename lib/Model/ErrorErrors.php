@@ -196,7 +196,6 @@ class ErrorErrors implements ModelInterface, ArrayAccess
     const CODE_MISSING_REQUIRED_CATEGORY = 'missing_required_category';
     const CODE_OUTSIDE_OF_PERMITTED_AREAS = 'outside_of_permitted_areas';
     const CODE_NOT_VALID_AT_THIS_TIME = 'not_valid_at_this_time';
-    const CODE_NOT_ACTIVE = 'not_active';
     const CODE_MAXIMUM_REDEMPTIONS_EXCEEDED = 'maximum_redemptions_exceeded';
     const CODE_BUDGET_EXCEEDED = 'budget_exceeded';
     const CODE_NEW_CUSTOMER_REQUIRED = 'new_customer_required';
@@ -207,6 +206,7 @@ class ErrorErrors implements ModelInterface, ArrayAccess
     const CODE_ABOVE_CAMPAIGN_MAXIMUM = 'above_campaign_maximum';
     const CODE_UNKNOWN_TAGS = 'unknown_tags';
     const CODE_DOES_NOT_MATCH_ASSIGNED_CUSTOMER = 'does_not_match_assigned_customer';
+    const CODE_NOT_ACTIVE = 'not_active';
     const CODE_UNIQUE_CODE_ALREADY_USED = 'unique_code_already_used';
     const CODE_NOT_MATCH = 'not_match';
     
@@ -243,7 +243,6 @@ class ErrorErrors implements ModelInterface, ArrayAccess
             self::CODE_MISSING_REQUIRED_CATEGORY,
             self::CODE_OUTSIDE_OF_PERMITTED_AREAS,
             self::CODE_NOT_VALID_AT_THIS_TIME,
-            self::CODE_NOT_ACTIVE,
             self::CODE_MAXIMUM_REDEMPTIONS_EXCEEDED,
             self::CODE_BUDGET_EXCEEDED,
             self::CODE_NEW_CUSTOMER_REQUIRED,
@@ -254,6 +253,7 @@ class ErrorErrors implements ModelInterface, ArrayAccess
             self::CODE_ABOVE_CAMPAIGN_MAXIMUM,
             self::CODE_UNKNOWN_TAGS,
             self::CODE_DOES_NOT_MATCH_ASSIGNED_CUSTOMER,
+            self::CODE_NOT_ACTIVE,
             self::CODE_UNIQUE_CODE_ALREADY_USED,
             self::CODE_NOT_MATCH,
         ];
