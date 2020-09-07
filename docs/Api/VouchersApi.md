@@ -7,12 +7,12 @@ Method | HTTP request | Description
 [**batchGenerateVouchers**](VouchersApi.md#batchGenerateVouchers) | **POST** /campaigns/{id}/vouchers/batch | Batch create vouchers
 [**createVoucher**](VouchersApi.md#createVoucher) | **POST** /campaigns/{campaign_id}/vouchers | Create a voucher
 [**deleteVoucher**](VouchersApi.md#deleteVoucher) | **DELETE** /vouchers/{code} | Delete a voucher
+[**expireVoucher**](VouchersApi.md#expireVoucher) | **PATCH** /vouchers/{code}/expire | Expire a voucher
 [**expireVouchers**](VouchersApi.md#expireVouchers) | **POST** /campaigns/vouchers/expire | Expire a list of vouchers
 [**findVoucher**](VouchersApi.md#findVoucher) | **GET** /vouchers/find | Find a voucher by campaign metadata
 [**getVoucher**](VouchersApi.md#getVoucher) | **GET** /vouchers/{code} | Get a voucher
 [**getVouchers**](VouchersApi.md#getVouchers) | **GET** /campaigns/{campaign_id}/vouchers | Get all vouchers for a campaign
 [**importVouchers**](VouchersApi.md#importVouchers) | **POST** /campaigns/{id}/vouchers/import | Import your own vouchers
-[**updateVoucher**](VouchersApi.md#updateVoucher) | **PATCH** /vouchers/{code} | Update a voucher
 
 
 
@@ -31,10 +31,8 @@ Batch create vouchers
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure HTTP basic authorization: Basic
-$config = Vouchery\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
+// Configure Bearer authorization: Bearer
+$config = Vouchery\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
 $apiInstance = new Vouchery\Api\VouchersApi(
@@ -69,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../../README.md#Basic)
+[Bearer](../../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -94,10 +92,8 @@ Create a voucher
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure HTTP basic authorization: Basic
-$config = Vouchery\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
+// Configure Bearer authorization: Bearer
+$config = Vouchery\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
 $apiInstance = new Vouchery\Api\VouchersApi(
@@ -132,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../../README.md#Basic)
+[Bearer](../../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -159,10 +155,8 @@ Delete a single voucher. Vouchers with at least one confirmed redemption can not
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure HTTP basic authorization: Basic
-$config = Vouchery\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
+// Configure Bearer authorization: Bearer
+$config = Vouchery\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
 $apiInstance = new Vouchery\Api\VouchersApi(
@@ -194,12 +188,73 @@ void (empty response body)
 
 ### Authorization
 
-[Basic](../../README.md#Basic)
+[Bearer](../../README.md#Bearer)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
+
+
+## expireVoucher
+
+> \Vouchery\Model\Voucher expireVoucher($code)
+
+Expire a voucher
+
+Expire a voucher
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer authorization: Bearer
+$config = Vouchery\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Vouchery\Api\VouchersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$code = 'code_example'; // string | Voucher code
+
+try {
+    $result = $apiInstance->expireVoucher($code);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling VouchersApi->expireVoucher: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **code** | **string**| Voucher code |
+
+### Return type
+
+[**\Vouchery\Model\Voucher**](../Model/Voucher.md)
+
+### Authorization
+
+[Bearer](../../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../../README.md#documentation-for-models)
@@ -221,10 +276,8 @@ Given a list of voucher codes, change their status to expired, unless they have 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure HTTP basic authorization: Basic
-$config = Vouchery\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
+// Configure Bearer authorization: Bearer
+$config = Vouchery\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
 $apiInstance = new Vouchery\Api\VouchersApi(
@@ -256,7 +309,7 @@ void (empty response body)
 
 ### Authorization
 
-[Basic](../../README.md#Basic)
+[Bearer](../../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -283,10 +336,8 @@ Find a voucher by campaign metadata
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure HTTP basic authorization: Basic
-$config = Vouchery\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
+// Configure Bearer authorization: Bearer
+$config = Vouchery\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
 $apiInstance = new Vouchery\Api\VouchersApi(
@@ -327,7 +378,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../../README.md#Basic)
+[Bearer](../../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -352,10 +403,8 @@ Get a voucher
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure HTTP basic authorization: Basic
-$config = Vouchery\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
+// Configure Bearer authorization: Bearer
+$config = Vouchery\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
 $apiInstance = new Vouchery\Api\VouchersApi(
@@ -388,7 +437,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../../README.md#Basic)
+[Bearer](../../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -402,7 +451,7 @@ Name | Type | Description  | Notes
 
 ## getVouchers
 
-> \Vouchery\Model\Voucher[] getVouchers($campaign_id)
+> \Vouchery\Model\Voucher[] getVouchers($campaign_id, $active, $per_page, $page, $status)
 
 Get all vouchers for a campaign
 
@@ -413,10 +462,8 @@ Get all vouchers for a campaign
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure HTTP basic authorization: Basic
-$config = Vouchery\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
+// Configure Bearer authorization: Bearer
+$config = Vouchery\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
 $apiInstance = new Vouchery\Api\VouchersApi(
@@ -426,9 +473,13 @@ $apiInstance = new Vouchery\Api\VouchersApi(
     $config
 );
 $campaign_id = 56; // int | Campaign ID
+$active = 'active_example'; // string | vouchers activity flag (true/false)
+$per_page = 3.4; // float | pagination - vouchers per page
+$page = 3.4; // float | pagination - current page (starts from 1)
+$status = 'status_example'; // string | vouchers status (created/distributed/validated/redeemed/expired)
 
 try {
-    $result = $apiInstance->getVouchers($campaign_id);
+    $result = $apiInstance->getVouchers($campaign_id, $active, $per_page, $page, $status);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VouchersApi->getVouchers: ', $e->getMessage(), PHP_EOL;
@@ -442,6 +493,10 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaign_id** | **int**| Campaign ID |
+ **active** | **string**| vouchers activity flag (true/false) | [optional]
+ **per_page** | **float**| pagination - vouchers per page | [optional]
+ **page** | **float**| pagination - current page (starts from 1) | [optional]
+ **status** | **string**| vouchers status (created/distributed/validated/redeemed/expired) | [optional]
 
 ### Return type
 
@@ -449,7 +504,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../../README.md#Basic)
+[Bearer](../../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -474,10 +529,8 @@ Import your own vouchers
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure HTTP basic authorization: Basic
-$config = Vouchery\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
+// Configure Bearer authorization: Bearer
+$config = Vouchery\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
 $apiInstance = new Vouchery\Api\VouchersApi(
@@ -512,76 +565,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../../README.md#Basic)
+[Bearer](../../README.md#Bearer)
 
 ### HTTP request headers
 
 - **Content-Type**: multipart/form-data
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
-[[Back to README]](../../README.md)
-
-
-## updateVoucher
-
-> \Vouchery\Model\Voucher updateVoucher($code, $voucher)
-
-Update a voucher
-
-Only voucher status can be updated.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure HTTP basic authorization: Basic
-$config = Vouchery\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
-
-
-$apiInstance = new Vouchery\Api\VouchersApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$code = 'code_example'; // string | Voucher code
-$voucher = new \Vouchery\Model\Voucher(); // \Vouchery\Model\Voucher | 
-
-try {
-    $result = $apiInstance->updateVoucher($code, $voucher);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling VouchersApi->updateVoucher: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **code** | **string**| Voucher code |
- **voucher** | [**\Vouchery\Model\Voucher**](../Model/Voucher.md)|  | [optional]
-
-### Return type
-
-[**\Vouchery\Model\Voucher**](../Model/Voucher.md)
-
-### Authorization
-
-[Basic](../../README.md#Basic)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)

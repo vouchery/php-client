@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] [readonly] 
-**type** | **string** |  | [optional] [readonly] 
+**type** | **string** |  | 
 **campaign_id** | **int** |  | [optional] [readonly] 
 **created_at** | [**\DateTime**](\DateTime.md) |  | [optional] [readonly] 
 **updated_at** | [**\DateTime**](\DateTime.md) |  | [optional] [readonly] 

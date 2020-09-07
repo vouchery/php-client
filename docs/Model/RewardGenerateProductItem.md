@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** | This reward generates product item and return it in trigger response. | [default to 'generate_product_item']
+**type** | **string** |  | 
 **name** | **string** |  | 
 **sku** | **string** |  | 
 **product_identifier** | **string** |  | [optional] 

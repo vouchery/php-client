@@ -8,10 +8,12 @@ Name | Type | Description | Notes
 **id** | **int** |  | [optional] [readonly] 
 **name** | **string** |  | [optional] 
 **email** | **string** |  | 
-**team** | **string** |  | [optional] 
+**team** | **string[]** |  | [optional] 
 **role** | **string** |  | 
 **access_scope** | **string** |  | 
 **active** | **bool** |  | [optional] [readonly] 
+**masked_api_key** | **string** |  | [optional] [readonly] 
+**last_sign_in_at** | [**\DateTime**](\DateTime.md) |  | [optional] [readonly] 
 **created_at** | [**\DateTime**](\DateTime.md) |  | [optional] [readonly] 
 **updated_at** | [**\DateTime**](\DateTime.md) |  | [optional] [readonly] 
 

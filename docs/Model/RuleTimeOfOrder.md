@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** | Define when customer can trigger subcampaign: particular time of day and week days. | [default to 'time_of_order']
+**type** | **string** |  | 
 **start_time** | **string** | Time in 24-hour format: HH:MM | 
 **end_time** | **string** | Time in 24-hour format: HH:MM | 
 **days_of_week** | **int[]** | Array of days of week, where Sunday is 0, Monday is 1, Saturday is 6 | 

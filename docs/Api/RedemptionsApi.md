@@ -25,10 +25,8 @@ Confirm a redemption
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure HTTP basic authorization: Basic
-$config = Vouchery\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
+// Configure Bearer authorization: Bearer
+$config = Vouchery\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
 $apiInstance = new Vouchery\Api\RedemptionsApi(
@@ -63,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../../README.md#Basic)
+[Bearer](../../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -88,10 +86,8 @@ Create a redemption
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure HTTP basic authorization: Basic
-$config = Vouchery\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
+// Configure Bearer authorization: Bearer
+$config = Vouchery\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
 $apiInstance = new Vouchery\Api\RedemptionsApi(
@@ -126,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../../README.md#Basic)
+[Bearer](../../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -151,10 +147,8 @@ Delete a redemption
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure HTTP basic authorization: Basic
-$config = Vouchery\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
+// Configure Bearer authorization: Bearer
+$config = Vouchery\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
 $apiInstance = new Vouchery\Api\RedemptionsApi(
@@ -188,7 +182,7 @@ void (empty response body)
 
 ### Authorization
 
-[Basic](../../README.md#Basic)
+[Bearer](../../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -213,10 +207,8 @@ Get a redemption
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure HTTP basic authorization: Basic
-$config = Vouchery\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
+// Configure Bearer authorization: Bearer
+$config = Vouchery\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
 $apiInstance = new Vouchery\Api\RedemptionsApi(
@@ -251,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../../README.md#Basic)
+[Bearer](../../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -276,10 +268,8 @@ Get all redemptions for a campaign
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure HTTP basic authorization: Basic
-$config = Vouchery\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
+// Configure Bearer authorization: Bearer
+$config = Vouchery\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
 $apiInstance = new Vouchery\Api\RedemptionsApi(
@@ -312,7 +302,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../../README.md#Basic)
+[Bearer](../../README.md#Bearer)
 
 ### HTTP request headers
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** | This reward adds specific number of loyalty points to customer, who is triggering the subcampaign. | [default to 'add_points']
+**type** | **string** |  | 
 **title** | **string** |  | [optional] 
 **description** | **string** |  | [optional] 
 **value** | **float** | Number of loyalty points to add. | 

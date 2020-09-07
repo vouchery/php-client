@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] [readonly] 
-**type** | **string** |  | [optional] [readonly] 
+**type** | **string** |  | 
 **title** | **string** |  | [optional] [readonly] 
 **description** | **string** |  | [optional] [readonly] 
 **campaign_id** | **int** |  | [optional] [readonly] 

@@ -25,10 +25,8 @@ Create a category
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure HTTP basic authorization: Basic
-$config = Vouchery\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
+// Configure Bearer authorization: Bearer
+$config = Vouchery\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
 $apiInstance = new Vouchery\Api\CategoriesApi(
@@ -61,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../../README.md#Basic)
+[Bearer](../../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -86,10 +84,8 @@ Delete a category
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure HTTP basic authorization: Basic
-$config = Vouchery\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
+// Configure Bearer authorization: Bearer
+$config = Vouchery\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
 $apiInstance = new Vouchery\Api\CategoriesApi(
@@ -121,7 +117,7 @@ void (empty response body)
 
 ### Authorization
 
-[Basic](../../README.md#Basic)
+[Bearer](../../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -146,10 +142,8 @@ Get all categories for a campaign
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure HTTP basic authorization: Basic
-$config = Vouchery\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
+// Configure Bearer authorization: Bearer
+$config = Vouchery\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
 $apiInstance = new Vouchery\Api\CategoriesApi(
@@ -178,7 +172,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Basic](../../README.md#Basic)
+[Bearer](../../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -203,10 +197,8 @@ Get a category
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure HTTP basic authorization: Basic
-$config = Vouchery\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
+// Configure Bearer authorization: Bearer
+$config = Vouchery\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
 $apiInstance = new Vouchery\Api\CategoriesApi(
@@ -239,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../../README.md#Basic)
+[Bearer](../../README.md#Bearer)
 
 ### HTTP request headers
 
@@ -264,10 +256,8 @@ Update a category
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure HTTP basic authorization: Basic
-$config = Vouchery\Configuration::getDefaultConfiguration()
-              ->setUsername('YOUR_USERNAME')
-              ->setPassword('YOUR_PASSWORD');
+// Configure Bearer authorization: Bearer
+$config = Vouchery\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
 $apiInstance = new Vouchery\Api\CategoriesApi(
@@ -302,7 +292,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../../README.md#Basic)
+[Bearer](../../README.md#Bearer)
 
 ### HTTP request headers
 

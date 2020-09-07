@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] [readonly] 
+**type** | **string** |  | 
 **campaign_id** | **int** |  | [optional] [readonly] 
 **active** | **bool** |  | [readonly] 
 **status** | **string** |  | [optional] 

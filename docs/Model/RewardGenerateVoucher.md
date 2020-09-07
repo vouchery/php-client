@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** | This reward generates voucher within specific subcampaign, that related only to particular customer. | [default to 'generate_voucher']
+**type** | **string** |  | 
 **title** | **string** |  | [optional] 
 **description** | **string** |  | [optional] 
 **prefix** | **string** | A prefix in all generated vouchers. Needs to be unique within a project. | 
